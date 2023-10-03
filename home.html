@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MyWebsite</title>
+    <link rel="icon" href="icon.JPG">
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+    <style>
+        *{
+            margin: 0px;
+            text-decoration: none;
+            list-style: none;
+        }
+        .label-nav{
+            color: white;
+            background-color: darkblue;
+            text-align: center;
+            padding-top: 10px;
+            padding-bottom: 10px;
+            font-size: larger;
+            font-weight: 1000;
+        }
+        hr{
+            margin-top: 10px;
+            margin-bottom: 10px;
+            width: 100%;
+            background-color: black;
+            padding: 1px;
+        }
+        .nav{
+            padding: 0px;
+            display: flex;
+            justify-content: space-around;
+        }
+        .nav li a{
+            text-decoration: none;
+            color: rgb(255, 255, 255);
+            font-weight: 500;
+            font-size: 16px;
+            background-color: maroon;
+            padding: 5px 20px 5px 20px;
+            border-radius: 10px;
+            display: inline-block;
+            transition: transform 0.2s;
+        }
+        .nav li a:hover{
+            transform: scale(1.1);
+        }
+        .main{
+            margin-top: 10px;
+            height: 90vh;
+            background-color: rgb(255, 255, 255);
+            text-align: center;
+            color: rgb(0, 0, 0);
+        }
+        .main h1{
+            padding-top: 20vh;
+            font-size: 200%;
+            font-weight: 1000;
+        }
+        @keyframes bergerak{
+            0% {
+                transform: translate3d(0,0,0);
+            }
+            50% {
+                
+                transform: translate3d(0,20px,0);
+            }
+            100% {
+                transform: translate3d(0,0,0);
+            }
+
+        }
+        .bergerak {
+            animation: bergerak 5s ease infinite;
+        }
+        .main{
+            padding-left: 40px;
+            padding-right: 40px;
+        }
+        footer{
+            color: white;
+            background-color:  darkblue;
+            padding: 5px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        // Fungsi untuk menampilkan prompt dan menampilkan nama di halaman
+        function mintaNama() {
+            var nama = prompt("Masukkan nama Anda:");
+            if (nama != null && nama != "") {
+                var pesan = "Hy " + nama + ",";
+                var waktu = new Date();
+                var jam = waktu.getHours();
+
+                if(jam >= 0 && jam < 12){
+                    pesan += "Selamat Pagi.";
+                } else if(jam >= 12 && jam < 18){
+                    pesan += "Selamat Siang.";
+                } else {
+                    pesan += "Selamat Malam.";
+                }
+                document.getElementById("pesanSelamatDatang").textContent = pesan;
+            }
+        }
+
+        // Panggil fungsi saat halaman dimuat
+        window.onload = mintaNama;
+    </script>
+
+        <p class="label-nav" ><b>Home Page</b></p>
+        <hr>
+        <ul class="nav">
+            <li><a href="">Home Page</a></li>
+            <li><a href="">Biodata</a></li>
+            <li><a href="">Contact</a></li>
+        </ul>
+
+        <div class="main">
+            <h1 class="bergerak" id="pesanSelamatDatang"></h1>
+            <br>
+            <p class="bergerak">Terimakasih telah mengunjungi website pribadi saya, saya harap kalian bisa mengetahui tentang saya di dalam website ini!!</p>
+            <br><br>
+            <p class="bergerak">Ada sebuah pepatah mengatakan :</p>
+            <p class="bergerak"><i>"Tak kenal maka tak sayang, tak sayang maka tak cinta, tak cinta makan tak "</i></p>
+
+        </div>
+
+
+
+
+<footer>
+    <p><i>By aPrilio 2023</i></p>
+</footer>
+<script src="bootstrap/js/bootstrap.min.js"></script>
+<script src="bootstrap/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
